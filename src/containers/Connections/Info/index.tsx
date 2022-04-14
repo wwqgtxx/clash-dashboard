@@ -54,9 +54,25 @@ export function ConnectionInfo (props: ConnectionsInfoProps) {
                 }</span>
             </div>
             <div className="flex my-3">
+                <span className="font-bold w-16">{t('info.process')}</span>
+                <span className="font-mono">{
+                    props.connection.metadata?.process
+                        ? `${props.connection.metadata.process}`
+                        : t('info.hostEmpty')
+                }</span>
+            </div>
+            <div className="flex my-3">
+                <span className="font-bold w-16">{t('info.processPath')}</span>
+                <span className="font-mono flex-1 break-all">{
+                    props.connection.metadata?.processPath
+                        ? `${props.connection.metadata.processPath}`
+                        : t('info.hostEmpty')
+                }</span>
+            </div>
+            <div className="flex my-3">
                 <span className="font-bold w-16">{t('info.rule')}</span>
                 <span className="font-mono">
-                    { props.connection.rule && `${props.connection.rule}${props.connection.rulePayload && `(${props.connection.rulePayload})`}` }
+                    { props.connection.rule && `${props.connection.rule}${props.connection.rulePayload && ` :: ${props.connection.rulePayload}`}` }
                 </span>
             </div>
             <div className="flex my-3">

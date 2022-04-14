@@ -80,6 +80,8 @@ export interface Connections {
         network: string
         type: string
         host: string
+        process: string
+        processPath: string
         sourceIP: string
         sourcePort: string
         destinationPort: string
